@@ -2,9 +2,7 @@
 import { defineConfig } from 'umi';
 import defaultSettings from './defaultSettings';
 import proxy from './proxy';
-
 const { REACT_APP_ENV } = process.env;
-
 export default defineConfig({
   hash: true,
   antd: {},
@@ -42,7 +40,6 @@ export default defineConfig({
         },
       ],
     },
-
     {
       path: '/welcome',
       name: 'welcome',
@@ -73,6 +70,20 @@ export default defineConfig({
     {
       path: '/',
       redirect: '/welcome',
+    },
+    {
+      name: '测试页面',
+      icon: 'smile',
+      path: '/testtemplate',
+      component: './TestTemplate',
+      routes: [
+        {
+          name: '拓扑编辑器',
+          icon: 'smile',
+          path: '/testtemplate/editorkoni',
+          component: './TestTemplate/EditorKoni',
+        },
+      ]
     },
     {
       component: './404',
